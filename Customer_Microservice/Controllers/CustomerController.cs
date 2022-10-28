@@ -1,7 +1,6 @@
 ﻿using Customer_Microservice.Features.CustomerFeatures.Commands;
 using Customer_Microservice.Features.CustomerFeatures.Queries;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Customer_Microservice.Controllers
@@ -24,7 +23,6 @@ namespace Customer_Microservice.Controllers
         {
             return Ok(await Mediator.Send(new GetAllCustomersQuery()));
         }
-
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
